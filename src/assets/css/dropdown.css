@@ -13,16 +13,26 @@
     position: relative;
 }
 
-.dropdown-submenu a::after {
-    transform: rotate(-90deg);
-    position: absolute;
-    right: 6px;
-    top: 0.8em;
+.dropdown-menu .dropdown-toggle {
+    cursor: default;
 }
 
-.dropdown-submenu .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
+.dropdown-menu .dropdown-toggle::after {
+    position: absolute;
+    right: 0.4rem;
+    top: 0.95rem;
+}
+
+.dropdown-menu.show .dropdown-toggle::after {
+    transform: rotate(-90deg);
+}
+
+.dropdown.is-expanded > .dropdown-toggle::after {
+    transform: none;
+}
+
+@media only screen and (max-width: 992px) {
+    .dropdown-menu.show .dropdown-toggle::after {
+        transform: none;
+    }
 }

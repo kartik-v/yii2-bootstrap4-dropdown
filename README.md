@@ -35,13 +35,24 @@ to the ```require``` section of your `composer.json` file.
 
 ## Usage
 
-```html
-<php 
+### Dropdown Solo Button
+
+Usage of `kartik\bs4dropdown\Dropdown` widget as a standalone dropdown button.
+
+```php
+<?php 
+use \yii\helpers\Html;
 use kartik\bs4dropdown\Dropdown;
 ?>
 <div class="dropdown">
-    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Label <b class="caret"></b></a>
     <?php
+        echo Html::button('Dropdown Button', [
+           'id' => 'dropdownMenuButton',
+           'class' => 'btn btn-secondary dropdown-toggle'
+           'data-toggle' => 'dropdown',
+           'aria-haspopup' => 'true',
+           'aria-expanded' => 'false'
+        ]);
         echo Dropdown::widget([
             'items' => [
                 ['label' => 'Section 1', 'url' => '/'],
@@ -61,10 +72,63 @@ use kartik\bs4dropdown\Dropdown;
                      ],
                  ],
             ],
+            'options' => ['aria-labelledby' => 'dropdownMenuButton']
         ]);
     ?>
 </div>
 ```
+
+### Dropdown Menu NavBar
+
+Usage of `kartik\bs4dropdown\Dropdown` widget with Bootstrap 4 `NavBar`.
+
+```php
+use yii\bootstrap4\NavBar;
+use yii\bootstrap4\Nav;
+use kartik\bs4dropdown\Dropdown;
+
+NavBar::begin(['brandLabel' => 'NavBar Test']);
+echo Nav::widget([
+    'items' => [
+        ['label' => 'Home', 'url' => ['/site/index']],
+        [
+            'label' => 'Sections', 
+            'items' => [
+                ['label' => 'Section 1', 'url' => '/'],
+                ['label' => 'Section 2', 'url' => '#'],
+                [
+                     'label' => 'Section 3', 
+                     'items' => [
+                         ['label' => 'Section 3.1', 'url' => '/'],
+                         ['label' => 'Section 3.2', 'url' => '#'],
+                         [
+                             'label' => 'Section 3.3', 
+                             'items' => [
+                                 ['label' => 'Section 3.3.1', 'url' => '/'],
+                                 ['label' => 'Section 3.3.2', 'url' => '#'],
+                             ],
+                         ],
+                     ],
+                 ],
+            ],
+            'dropDownOptions' => ['aria-labelledby' => 'sectionsMenu'],
+            'linkOptions' => [
+                'id' => 'sectionsMenu',
+                'class' => "nav-link dropdown-toggle{$active1}", 
+                'title' => 'Krajee Dropdown Sections',
+                'role' => 'button',
+                'aria-haspopup' => 'true',
+                'aria-expanded' => 'false'
+            ]
+        ],
+        ['label' => 'About', 'url' => ['/site/about']],
+    ],
+    'dropdownClass' => Dropdown::classname(), // use the custom dropdown
+    'options' => ['class' => 'navbar-nav mr-auto'],
+]);
+NavBar::end();
+```
+
 
 ## License
 

@@ -10,15 +10,19 @@
  * For more Yii related demos visit http://demos.krajee.com
  **/
 (function ($) {
-    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-        var $menu = $(this);
-        if (!$menu.next().hasClass('show')) {
-            $menu.parents('.dropdown-menu').first().find('.show').removeClass('show');
+    $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+        var $el = $(this), $parent = $el.offsetParent(".dropdown-menu"), $subMenu;
+        if (!$el.next().hasClass('show')) {
+            $el.parents('.dropdown-menu').first().find('.show').removeClass("show");
         }
-        $menu.next(".dropdown-menu").toggleClass('show');
-        $menu.parents('li.nav-item.dropdown.show').one('hidden.bs.dropdown', function(e) {
-            $('.dropdown-submenu .show').removeClass("show");
+        $subMenu = $el.next(".dropdown-menu"); 
+        $subMenu.toggleClass('show');
+        $subMenu.closest('.dropdown').toggleClass('is-expanded');
+        $el.parent("li.nav-item").toggleClass('show');
+        $el.parents('li.nav-item.dropdown.show').one('hidden.bs.dropdown', function (e) {
+            $('.dropdown-menu .show').removeClass("show");
         });
+        $el.next().css({ "top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
         return false;
     });
 })(window.jQuery);
