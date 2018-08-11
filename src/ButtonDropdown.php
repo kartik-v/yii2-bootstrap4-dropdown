@@ -1,0 +1,70 @@
+<?php
+/**
+ * @package   yii2-bootstrap4-dropdown
+ * @author    Kartik Visweswaran <kartikv2@gmail.com>
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2018
+ * @version   1.0.0
+ */
+
+namespace kartik\bs4dropdown;
+
+use yii\bootstrap4\ButtonDropdown as Bs4ButtonDropdown;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
+
+/**
+ * ButtonDropdown renders a group or split button dropdown bootstrap component 
+ * with multi level submenu dropdown capability.
+ *
+ * For example,
+ *
+ * ```php
+ * // a button group using Dropdown widget
+ * echo ButtonDropdown::widget([
+ *     'label' => 'Action',
+ *     'dropdown' => [
+ *         'items' => [
+ *             ['label' => 'DropdownA', 'url' => '/'],
+ *             ['label' => 'DropdownB', 'url' => '#'],
+ *         ],
+ *     ],
+ * ]);
+ * ```
+ * @see http://getbootstrap.com/javascript/#buttons
+ * @see http://getbootstrap.com/components/#btn-dropdowns
+ */
+class ButtonDropdown extends Bs4ButtonDropdown
+{
+    /**
+     * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
+     */
+    public $dropdownClass = 'kartik\bs4dropdown\Dropdown';
+
+    /**
+     * @var bool whether to render the container using the [[options]] as HTML attributes. If set to `false`,
+     * the container element enclosing the button and dropdown will NOT be rendered.
+     */
+    public $renderContainer = true;
+
+    /**
+     * {@inheritdoc}
+     * @throws \Exception
+     */
+    public function run()
+    {
+        $html = $this->renderButton() . "\n" . $this->renderDropdown();
+
+        if ($this->renderContainer) {
+            Html::addCssClass($this->options, ['widget' => 'dropdown']);
+            $options = $this->options;
+            $tag = ArrayHelper::remove($options, 'tag', 'div');
+            $html = Html::tag($tag, $html, $options);
+        }
+
+        // Set options id to button options id to ensure correct css selector in plugin initialisation
+        $this->options['id'] = $this->buttonOptions['id'];
+
+        $this->registerPlugin('dropdown');
+        return $html;
+    }
+}

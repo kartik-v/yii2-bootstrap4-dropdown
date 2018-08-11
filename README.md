@@ -35,47 +35,6 @@ to the ```require``` section of your `composer.json` file.
 
 ## Usage
 
-### Dropdown Solo Button
-
-```php
-<?php 
-use \yii\helpers\Html;
-use kartik\bs4dropdown\Dropdown;
-?>
-<div class="dropdown">
-    <?php
-        echo Html::button('Dropdown Button', [
-           'id' => 'dropdownMenuButton',
-           'class' => 'btn btn-secondary dropdown-toggle'
-           'data-toggle' => 'dropdown',
-           'aria-haspopup' => 'true',
-           'aria-expanded' => 'false'
-        ]);
-        echo Dropdown::widget([
-            'items' => [
-                ['label' => 'Section 1', 'url' => '/'],
-                ['label' => 'Section 2', 'url' => '#'],
-                [
-                     'label' => 'Section 3', 
-                     'items' => [
-                         ['label' => 'Section 3.1', 'url' => '/'],
-                         ['label' => 'Section 3.2', 'url' => '#'],
-                         [
-                             'label' => 'Section 3.3', 
-                             'items' => [
-                                 ['label' => 'Section 3.3.1', 'url' => '/'],
-                                 ['label' => 'Section 3.3.2', 'url' => '#'],
-                             ],
-                         ],
-                     ],
-                 ],
-            ],
-            'options' => ['aria-labelledby' => 'dropdownMenuButton']
-        ]);
-    ?>
-</div>
-```
-
 ### Dropdown Menu NavBar
 
 ```php
@@ -149,6 +108,77 @@ NavBar::end();
 </div>
 ```
 
+### Dropdown Solo Button
+
+```php
+<?php 
+use \yii\helpers\Html;
+use kartik\bs4dropdown\Dropdown;
+?>
+<div class="dropdown">
+    <?php
+        echo Html::button('Dropdown Button', [
+           'id' => 'dropdownMenuButton',
+           'class' => 'btn btn-secondary dropdown-toggle'
+           'data-toggle' => 'dropdown',
+           'aria-haspopup' => 'true',
+           'aria-expanded' => 'false'
+        ]);
+        echo Dropdown::widget([
+            'items' => [
+                ['label' => 'Section 1', 'url' => '/'],
+                ['label' => 'Section 2', 'url' => '#'],
+                [
+                     'label' => 'Section 3', 
+                     'items' => [
+                         ['label' => 'Section 3.1', 'url' => '/'],
+                         ['label' => 'Section 3.2', 'url' => '#'],
+                         [
+                             'label' => 'Section 3.3', 
+                             'items' => [
+                                 ['label' => 'Section 3.3.1', 'url' => '/'],
+                                 ['label' => 'Section 3.3.2', 'url' => '#'],
+                             ],
+                         ],
+                     ],
+                 ],
+            ],
+            'options' => ['aria-labelledby' => 'dropdownMenuButton']
+        ]);
+    ?>
+</div>
+```
+
+### Dropdown Button Alt (using ButtonDropdown)
+
+```php
+use \yii\helpers\Html;
+use kartik\bs4dropdown\ButtonDropdown;
+echo ButtonDropdown::widget([
+    'label' => 'Dropdown Button',
+    'dropdown' => [
+        'items' => [
+            ['label' => 'Section 1', 'url' => '/'],
+            ['label' => 'Section 2', 'url' => '#'],
+            [
+                 'label' => 'Section 3', 
+                 'items' => [
+                     ['label' => 'Section 3.1', 'url' => '/'],
+                     ['label' => 'Section 3.2', 'url' => '#'],
+                     [
+                         'label' => 'Section 3.3', 
+                         'items' => [
+                             ['label' => 'Section 3.3.1', 'url' => '/'],
+                             ['label' => 'Section 3.3.2', 'url' => '#'],
+                         ],
+                     ],
+                 ],
+             ],
+        ],
+    ],
+    'buttonOptions' => ['class'=>'btn-secondary']
+]);
+```
 
 ## License
 

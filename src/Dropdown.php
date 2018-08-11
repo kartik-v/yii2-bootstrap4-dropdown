@@ -12,7 +12,7 @@ use yii\bootstrap4\Dropdown as Bs4Dropdown;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
-use yii\bootstrap4\Html;
+use yii\helpers\Html;
 
 /**
  * Dropdown renders a Bootstrap dropdown menu component. This widget extends the default
