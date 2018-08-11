@@ -11,7 +11,7 @@ yii2-bootstrap4-dropdown
 Enhanced Bootstrap 4 dropdown widget for Yii2 framework with nested submenu support.
 
 ## Demo
-You can see detailed [documentation and demos](http://demos.krajee.com/bootstrap4-dropdown) on usage of this extension.
+TBD
 
 ## Installation
 
@@ -36,8 +36,6 @@ to the ```require``` section of your `composer.json` file.
 ## Usage
 
 ### Dropdown Solo Button
-
-Usage of `kartik\bs4dropdown\Dropdown` widget as a standalone dropdown button.
 
 ```php
 <?php 
@@ -80,8 +78,6 @@ use kartik\bs4dropdown\Dropdown;
 
 ### Dropdown Menu NavBar
 
-Usage of `kartik\bs4dropdown\Dropdown` widget with Bootstrap 4 `NavBar`.
-
 ```php
 use yii\bootstrap4\NavBar;
 use yii\bootstrap4\Nav;
@@ -92,7 +88,7 @@ echo Nav::widget([
     'items' => [
         ['label' => 'Home', 'url' => ['/site/index']],
         [
-            'label' => 'Sections', 
+            'label' => 'Dropdown', 
             'items' => [
                 ['label' => 'Section 1', 'url' => '/'],
                 ['label' => 'Section 2', 'url' => '#'],
@@ -111,15 +107,6 @@ echo Nav::widget([
                      ],
                  ],
             ],
-            'dropDownOptions' => ['aria-labelledby' => 'sectionsMenu'],
-            'linkOptions' => [
-                'id' => 'sectionsMenu',
-                'class' => "nav-link dropdown-toggle{$active1}", 
-                'title' => 'Krajee Dropdown Sections',
-                'role' => 'button',
-                'aria-haspopup' => 'true',
-                'aria-expanded' => 'false'
-            ]
         ],
         ['label' => 'About', 'url' => ['/site/about']],
     ],
@@ -127,6 +114,39 @@ echo Nav::widget([
     'options' => ['class' => 'navbar-nav mr-auto'],
 ]);
 NavBar::end();
+
+<div class="dropdown">
+    <?php
+        echo Html::button('Dropdown Button', [
+           'id' => 'dropdownMenuButton',
+           'class' => 'btn btn-secondary dropdown-toggle'
+           'data-toggle' => 'dropdown',
+           'aria-haspopup' => 'true',
+           'aria-expanded' => 'false'
+        ]);
+        echo Dropdown::widget([
+            'items' => [
+                ['label' => 'Section 1', 'url' => '/'],
+                ['label' => 'Section 2', 'url' => '#'],
+                [
+                     'label' => 'Section 3', 
+                     'items' => [
+                         ['label' => 'Section 3.1', 'url' => '/'],
+                         ['label' => 'Section 3.2', 'url' => '#'],
+                         [
+                             'label' => 'Section 3.3', 
+                             'items' => [
+                                 ['label' => 'Section 3.3.1', 'url' => '/'],
+                                 ['label' => 'Section 3.3.2', 'url' => '#'],
+                             ],
+                         ],
+                     ],
+                 ],
+            ],
+            'options' => ['aria-labelledby' => 'dropdownMenuButton']
+        ]);
+    ?>
+</div>
 ```
 
 

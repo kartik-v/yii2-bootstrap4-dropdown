@@ -15,7 +15,7 @@ use yii\helpers\ArrayHelper;
 use yii\bootstrap4\Html;
 
 /**
- * Dropdown renders a Bootstrap dropdown menu component. This widget extends the default 
+ * Dropdown renders a Bootstrap dropdown menu component. This widget extends the default
  * `yii\bootstrap4\Dropdown` widget to include nested submenu behavior and styling.
  *
  * For example,
@@ -35,12 +35,12 @@ use yii\bootstrap4\Html;
  *                 ['label' => 'Section 1', 'url' => '/'],
  *                 ['label' => 'Section 2', 'url' => '#'],
  *                 [
- *                      'label' => 'Section 3', 
+ *                      'label' => 'Section 3',
  *                      'items' => [
  *                          ['label' => 'Section 3.1', 'url' => '/'],
  *                          ['label' => 'Section 3.2', 'url' => '#'],
  *                          [
- *                              'label' => 'Section 3.3', 
+ *                              'label' => 'Section 3.3',
  *                              'items' => [
  *                                  ['label' => 'Section 3.3.1', 'url' => '/'],
  *                                  ['label' => 'Section 3.3.2', 'url' => '#'],
@@ -91,11 +91,10 @@ class Dropdown extends Bs4Dropdown
             }
             $encodeLabel = isset($item['encode']) ? $item['encode'] : $this->encodeLabels;
             $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
-            $itemOptions = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
             Html::addCssClass($linkOptions, 'dropdown-item');
             $url = array_key_exists('url', $item) ? $item['url'] : null;
-            $label .=  ' ' . !!$encodeLabel . ' ' . !!$this->encodeLabels;
+            $label .= ' ' . !!$encodeLabel . ' ' . !!$this->encodeLabels;
             if (empty($item['items'])) {
                 if ($url === null) {
                     $content = Html::tag('h6', $label, ['class' => 'dropdown-header']);
@@ -116,18 +115,18 @@ class Dropdown extends Bs4Dropdown
                     'data-toggle' => 'dropdown',
                     'aria-haspopup' => 'true',
                     'aria-expanded' => 'false',
-                    'role' => 'button'
+                    'role' => 'button',
                 ], $linkOptions));
                 $lines[] = static::widget([
                     'items' => $item['items'],
                     'options' => $submenuOptions,
                     'submenuOptions' => $submenuOptions,
-                    'encodeLabels' => $this->encodeLabels
+                    'encodeLabels' => $this->encodeLabels,
                 ]);
                 $lines[] = Html::endTag('div');
             }
         }
 
         return Html::tag('div', implode("\n", $lines), $options);
-    }    
+    }
 }
