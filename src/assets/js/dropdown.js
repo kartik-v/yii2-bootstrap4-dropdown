@@ -19,7 +19,7 @@
         $subMenu = $el.next(".dropdown-menu").toggleClass('show');
         $subMenu.closest('.dropdown').toggleClass('is-expanded');
         $el.parent("li.nav-item").toggleClass('show');
-        $el.parents('li.nav-item.dropdown.show').one('hidden.bs.dropdown', function (e) {
+        $el.parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
             $('.dropdown-menu .show').removeClass("show");
         });
         $el.next().css({"top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
