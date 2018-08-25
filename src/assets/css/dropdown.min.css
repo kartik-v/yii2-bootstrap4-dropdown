@@ -9,4 +9,4 @@
  * For more JQuery plugins visit http://plugins.krajee.com
  * For more Yii related demos visit http://demos.krajee.com
  **/
-.dropdown-submenu{position:relative}.dropdown-menu .dropdown-toggle{cursor:default}.dropdown-menu .dropdown-toggle::after{position:absolute;right:.4rem;top:.95rem}.dropdown-menu.show .dropdown-toggle::after{transform:rotate(-90deg)}.dropdown.is-expanded>.dropdown-toggle::after{transform:none}@media only screen and (max-width:992px){.dropdown-menu.show .dropdown-toggle::after{transform:none}}
+.dropdown-submenu{position:relative}.dropdown-menu .dropdown-toggle{cursor:default}.dropdown-menu .dropdown-toggle::after{position:absolute;right:.4rem;top:.95rem}.dropdown.is-expanded>.dropdown-toggle::after{transform:rotate(-90deg)}@media only screen and (max-width:992px){.dropdown-menu.show .dropdown-toggle::after{transform:none}}

@@ -23,12 +23,8 @@
     top: 0.95rem;
 }
 
-.dropdown-menu.show .dropdown-toggle::after {
-    transform: rotate(-90deg);
-}
-
 .dropdown.is-expanded > .dropdown-toggle::after {
-    transform: none;
+    transform: rotate(-90deg);
 }
 
 @media only screen and (max-width: 992px) {
