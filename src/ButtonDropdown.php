@@ -8,12 +8,10 @@
 
 namespace kartik\bs4dropdown;
 
-use yii\bootstrap4\ButtonDropdown as Bs4ButtonDropdown;
-use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
+use yii\bootstrap4\ButtonDropdown as Yii2ButtonDropdown;
 
 /**
- * ButtonDropdown renders a group or split button dropdown bootstrap component 
+ * ButtonDropdown renders a group or split button dropdown bootstrap component
  * with multi level submenu dropdown capability.
  *
  * For example,
@@ -33,7 +31,7 @@ use yii\helpers\Html;
  * @see http://getbootstrap.com/javascript/#buttons
  * @see http://getbootstrap.com/components/#btn-dropdowns
  */
-class ButtonDropdown extends Bs4ButtonDropdown
+class ButtonDropdown extends Yii2ButtonDropdown
 {
     /**
      * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].

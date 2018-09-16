@@ -5,6 +5,7 @@
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2018
  * @version   1.0.0
  */
+
 namespace kartik\bs4dropdown;
 
 use kartik\base\PluginAssetBundle;
@@ -18,7 +19,7 @@ class DropdownAsset extends PluginAssetBundle
      * @inheritdoc
      */
     public $bsVersion = '4.x';
-    
+
     /**
      * @inheritdoc
      */
@@ -27,6 +28,6 @@ class DropdownAsset extends PluginAssetBundle
         $this->setSourcePath(__DIR__ . '/assets');
         $this->setupAssets('js', ['js/dropdown']);
         $this->setupAssets('css', ['css/dropdown']);
-		parent::init();
-	}
+        parent::init();
+    }
 }

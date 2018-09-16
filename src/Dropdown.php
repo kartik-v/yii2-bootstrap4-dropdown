@@ -10,10 +10,6 @@ namespace kartik\bs4dropdown;
 
 use yii\bootstrap4\Dropdown as Yii2Dropdown;
 
-use yii\base\InvalidConfigException;
-use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
-
 /**
  * Dropdown renders a Bootstrap dropdown menu component. This widget extends the default
  * `yii\bootstrap4\Dropdown` widget to include nested submenu behavior and styling.

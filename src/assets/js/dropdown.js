@@ -11,14 +11,15 @@
  **/
 (function ($) {
     "use strict";
-    $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+    $('.dropdown-menu a.dropdown-toggle').on('click', function () {
+        // noinspection JSValidateTypes
         var $el = $(this), $parent = $el.offsetParent(".dropdown-menu"), $subMenu, $subMenuParent;
         if (!$el.next().hasClass('show')) {
             $el.parents('.dropdown-menu').first().find('.show').removeClass("show");
         }
         $subMenu = $el.next(".dropdown-menu").toggleClass('show');
-        $subMenuParent = $subMenu.closest('.dropdown')
-        $subMenuParent.closest('.dropdown-menu').find('.dropdown').each(function() {
+        $subMenuParent = $subMenu.closest('.dropdown');
+        $subMenuParent.closest('.dropdown-menu').find('.dropdown').each(function () {
             var $el = $(this);
             if (!$el.is($subMenuParent)) {
                 $el.removeClass('is-expanded');
@@ -26,7 +27,7 @@
         });
         $subMenuParent.toggleClass('is-expanded');
         $el.parent("li.nav-item").toggleClass('show');
-        $el.parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+        $el.parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function () {
             $('.dropdown-menu .show').removeClass("show");
             $('.dropdown-menu .is-expanded').removeClass("is-expanded");
         });

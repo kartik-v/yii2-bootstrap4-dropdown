@@ -20,7 +20,7 @@
     }
   ],
   "require": {
-    "kartik-v/yii2-krajee-base": "~1.9",
+    "kartik-v/yii2-krajee-base": ">=1.9",
     "yiisoft/yii2-bootstrap4": "*"
   },
   "autoload": {

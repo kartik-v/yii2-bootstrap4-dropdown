@@ -41,6 +41,7 @@ to the ```require``` section of your `composer.json` file.
 use yii\bootstrap4\NavBar;
 use yii\bootstrap4\Nav;
 use kartik\bs4dropdown\Dropdown;
+use yii\helpers\Html;
 
 NavBar::begin(['brandLabel' => 'NavBar Test']);
 echo Nav::widget([
