@@ -2,7 +2,7 @@
  * @package   yii2-bootstrap4-dropdown
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2018
- * @version   1.0.0
+ * @version   1.0.1
  *
  * Bootstrap 4 Dropdown Nested Submenu Script
  * 
@@ -27,7 +27,7 @@
         });
         $subMenuParent.toggleClass('is-expanded');
         $el.parent("li.nav-item").toggleClass('show');
-        $el.parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function () {
+        $el.parents('.dropdown.show').on('hidden.bs.dropdown', function () {
             $('.dropdown-menu .show').removeClass("show");
             $('.dropdown-menu .is-expanded').removeClass("is-expanded");
         });

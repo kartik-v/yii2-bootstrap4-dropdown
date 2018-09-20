@@ -2,17 +2,13 @@
  * @package   yii2-bootstrap4-dropdown
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2018
- * @version   1.0.0
+ * @version   1.0.1
  *
  * Bootstrap 4 Dropdown Nested Submenu Styling
  *
  * For more JQuery plugins visit http://plugins.krajee.com
  * For more Yii related demos visit http://demos.krajee.com
  **/
-.dropdown-submenu {
-    position: relative;
-}
-
 .dropdown-menu .dropdown-toggle {
     cursor: default;
 }
