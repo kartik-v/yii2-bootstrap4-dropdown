@@ -20,13 +20,15 @@
         }
     ],
     "require": {
-        "kartik-v/yii2-krajee-base": ">=1.9",
-        "yiisoft/yii2-bootstrap4": "*"
+        "kartik-v/yii2-krajee-base": ">=2.0"
     },
     "autoload": {
         "psr-4": {
             "kartik\\bs4dropdown\\": "src"
         }
+    },
+    "suggest": {
+        "yiisoft/yii2-bootstrap4": "The Yii 2 Bootstrap 4 extension must be installed separately for this extension to work."
     },
     "extra": {
         "branch-alias": {
