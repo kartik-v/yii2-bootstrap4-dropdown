@@ -2,8 +2,8 @@
 /**
  * @package   yii2-bootstrap4-dropdown
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2020
- * @version   1.0.1
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2021
+ * @version   1.0.2
  */
 
 namespace kartik\bs4dropdown;
@@ -52,13 +52,15 @@ use yii\bootstrap4\Dropdown as Yii2Dropdown;
  * ```
  * @see http://getbootstrap.com/javascript/#dropdowns
  */
-class Dropdown extends Yii2Dropdown
+class Dropdown extends Yii2Dropdown implements \kartik\base\BootstrapInterface
 {
+	use \kartik\base\BootstrapTrait;
     /**
      * @inheritdoc
      */
-    public function run()
+    public function run(): string
     {
+		$this->configureBsVersion();
         DropdownAsset::register($this->getView());
         return parent::run();
     }
