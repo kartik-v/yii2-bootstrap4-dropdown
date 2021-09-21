@@ -1,6 +1,12 @@
 Change Log: `yii2-bootstrap4-dropdown`
 ======================================
 
+## Version 1.0.3
+
+**Date:** 21-Sep-2021
+
+- Updates to dropdown toggle caret styling.
+
 ## Version 1.0.2
 
 **Date:** 01-Sep-2021

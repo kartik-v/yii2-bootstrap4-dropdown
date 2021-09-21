@@ -18,10 +18,10 @@
 [![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-bootstrap4-dropdown/d/monthly)](https://packagist.org/packages/kartik-v/yii2-bootstrap4-dropdown)
 [![Daily Downloads](https://poser.pugx.org/kartik-v/yii2-bootstrap4-dropdown/d/daily)](https://packagist.org/packages/kartik-v/yii2-bootstrap4-dropdown)
 
-Enhanced Bootstrap 4 dropdown widget for Yii2 framework with nested submenu support.
+Enhanced Bootstrap 4.x dropdown widget for Yii2 framework with nested submenu support.
 
 ## Demo
-TBD
+You can see detailed [documentation](http://demos.krajee.com/bootstrap5-dropdown) on usage of the extension.
 
 ## Installation
 
