@@ -3,8 +3,9 @@ Change Log: `yii2-bootstrap4-dropdown`
 
 ## Version 1.0.3
 
-**Date:** 21-Sep-2021
+**Date:** 28-Dec-2021
 
+- Enhance & standardize php docs for new website https://docs.krajee.com.
 - Updates to dropdown toggle caret styling.
 
 ## Version 1.0.2

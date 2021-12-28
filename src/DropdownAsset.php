@@ -11,7 +11,7 @@ namespace kartik\bs4dropdown;
 use kartik\base\PluginAssetBundle;
 
 /**
- * Dropdown asset bundle.
+ * DropdownAsset is the asset bundle used in rendering the [[Dropdown]] widget.
  */
 class DropdownAsset extends PluginAssetBundle
 {

@@ -8,15 +8,17 @@
 
 namespace kartik\bs4dropdown;
 
+use kartik\base\BootstrapInterface;
+use kartik\base\BootstrapTrait;
 use yii\bootstrap4\Dropdown as Yii2Dropdown;
 
 /**
- * Dropdown renders a Bootstrap dropdown menu component. This widget extends the default
- * `yii\bootstrap4\Dropdown` widget to include nested submenu behavior and styling.
+ * Dropdown renders a Bootstrap 4.x dropdown menu component. This widget extends the default bootstrap [[Yii2Dropdown]]
+ * widget to include nested submenu behavior and styling.
  *
  * For example,
  *
- * ```php
+ * ~~~
  * <div class="dropdown">
  *     <?php
  *         echo \yii\helpers\Html::button('Dropdown Button', [
@@ -49,12 +51,13 @@ use yii\bootstrap4\Dropdown as Yii2Dropdown;
  *         ]);
  *     ?>
  * </div>
- * ```
- * @see http://getbootstrap.com/javascript/#dropdowns
+ * ~~~
+ *
+ * @see https://getbootstrap.com/docs/4.6/components/dropdowns
  */
-class Dropdown extends Yii2Dropdown implements \kartik\base\BootstrapInterface
+class Dropdown extends Yii2Dropdown implements BootstrapInterface
 {
-	use \kartik\base\BootstrapTrait;
+	use BootstrapTrait;
     /**
      * @inheritdoc
      */

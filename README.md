@@ -6,10 +6,12 @@
     yii2-bootstrap4-dropdown
     <hr>
     <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DTP3NZQ6G2AYU"
-       title="Donate via Paypal" target="_blank">
-        <img src="http://kartik-v.github.io/bootstrap-fileinput-samples/samples/donate.png" alt="Donate"/>
-    </a>
+       title="Donate via Paypal" target="_blank"><img src="https://kartik-v.github.io/bootstrap-fileinput-samples/samples/donate.png" height="60" alt="Donate"/></a>
+    &nbsp; &nbsp; &nbsp;
+    <a href="https://www.buymeacoffee.com/kartikv" title="Buy me a coffee" ><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="60" alt="kartikv" /></a>
 </h1>
+
+<div align ="center">
 
 [![Stable Version](https://poser.pugx.org/kartik-v/yii2-bootstrap4-dropdown/v/stable)](https://packagist.org/packages/kartik-v/yii2-bootstrap4-dropdown)
 [![Unstable Version](https://poser.pugx.org/kartik-v/yii2-bootstrap4-dropdown/v/unstable)](https://packagist.org/packages/kartik-v/yii2-bootstrap4-dropdown)
@@ -17,6 +19,8 @@
 [![Total Downloads](https://poser.pugx.org/kartik-v/yii2-bootstrap4-dropdown/downloads)](https://packagist.org/packages/kartik-v/yii2-bootstrap4-dropdown)
 [![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-bootstrap4-dropdown/d/monthly)](https://packagist.org/packages/kartik-v/yii2-bootstrap4-dropdown)
 [![Daily Downloads](https://poser.pugx.org/kartik-v/yii2-bootstrap4-dropdown/d/daily)](https://packagist.org/packages/kartik-v/yii2-bootstrap4-dropdown)
+
+</div>
 
 Enhanced Bootstrap 4.x dropdown widget for Yii2 framework with nested submenu support.
 
