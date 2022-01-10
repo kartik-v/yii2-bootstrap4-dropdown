@@ -1,6 +1,12 @@
 Change Log: `yii2-bootstrap4-dropdown`
 ======================================
 
+## Version 1.0.4
+
+**Date:** 10-Jan-2022
+
+- Update copyright year.
+
 ## Version 1.0.3
 
 **Date:** 28-Dec-2021
